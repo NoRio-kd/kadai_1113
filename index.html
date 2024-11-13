@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nearby spot</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Local</h1>
+
+  <!-- 場所の選択とスケジュール入力 -->
+  <div>
+    <select id="location">
+      <option value="">Select Location</option>
+    </select>
+    <input type="time" id="time" placeholder="Select time">
+    <input type="text" id="title" placeholder="Enter title">
+    <textarea id="content" rows="3" placeholder="Enter details"></textarea>
+    <button onclick="addSchedule()">Add to schedule</button>
+  </div>
+
+  <!-- 地図表示 -->
+  <div id="map"></div>
+
+  <!-- スケジュールリスト -->
+  <h2>Your Schedule</h2>
+  <ul class="flex-schedule" id="scheduleList"></ul>
+
+  <!-- ジャンル選択 -->
+  <h2>Nearby Recommendation</h2>
+  <select id="genre" onchange="displayRecommendedSpots()">
+    <option value="">Select your activity</option>
+    <option value="cafe">Cafe</option>
+    <option value="lunch">Lunch</option>
+    <option value="dinner">Dinner</option>
+    <option value="bar">Bar</option>
+    <option value="sightseeing">Sightseeing</option>
+    <option value="shopping">Shopping</option>
+  </select>
+
+  <!-- おすすめスポットリスト -->
+  <ul class="flex-schedule" id="suggestedList"></ul>
+
+</div>
+
+<!-- Google Maps API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=**************&libraries=places"></script>
+<!-- スクリプトファイル -->
+<script src="./js/script.js"></script>
+
+</body>
+</html>
